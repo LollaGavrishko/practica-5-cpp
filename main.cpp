@@ -128,6 +128,29 @@ int main() {
 	return 0;
 }
 
+//Сжать массив, удалив из него все элементы, величина которых
+//находится в интервале [а, b]. Освободившиеся в конце массива
+//элементы заполнить нулями. 
 
-
+ #include <iostream>
+using namespace std;
+int main() {
+	int n, a, b, k;
+	cin >> n;
+	int A[n+1];
+	A[n]=0;
+	for (int i=0; i<n; i++)
+	   cin >> A[i];
+	cin >> a >> b;
+ 
+    for (int i=0; i<n; i++)
+    	if (A[i]>=a && A[i]<=b){
+    	    for (int j=i; j<n; j++)
+    	      A[j]=A[j+1];
+    	    i--;}
+ 
+	for (int i=0; i<n; i++)
+	  cout << A[i]<< endl;
+	return 0;
+}
 
